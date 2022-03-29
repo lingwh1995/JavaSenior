@@ -2,6 +2,6 @@ package com.dragonsoft.datastructure.queue;
 
 public class ArrayQueue {
 	public static void main(String[] args) {
-		System.out.println("x1x");
+		System.out.println("测试git2");
 	}
 }
