@@ -1,5 +1,8 @@
 package com.dragonsoft.datastructure.linkedlist.singlelinkedlist;
 
+import java.util.Iterator;
+import java.util.Stack;
+
 /**
  * 单链表
  * @author lingwh
@@ -10,7 +13,7 @@ public class SingleLinkedList {
 	private Node headNode = new Node(0,"");
 	
 	/**
-	 * 添加节点
+	 * 添加链表节点
 	 * @param node
 	 */
 	public void addElement(Node node) {
@@ -22,7 +25,7 @@ public class SingleLinkedList {
 	}
 	
 	/**
-	 * 在指定位置添加节点
+	 * 在指定位置添加链表节点
 	 * @param node
 	 */
 	public void addElementByOrder(Node node) {
@@ -40,7 +43,132 @@ public class SingleLinkedList {
 		node.next = tempNode.next;
 		tempNode.next = node;
 	}
+	
+	/**
+	 * 更新链表节点
+	 * @param node
+	 */
+	public void updateElement(Node node) {
+		if(null == headNode.next) {
+			System.out.println("当前链表为空...");
+			return;
+		}
+		Node tempNode = headNode.next;
+		boolean isExist = false;
+		while(true) {
+			if(tempNode == null) {
+				break;
+			}
+			if(node.elementId == tempNode.elementId) {
+				isExist = true;
+				break;
+			}
+			tempNode = tempNode.next;
+		}
+		if(isExist) {
+			tempNode.data = node.data;
+		}else {
+			System.out.println("没有在链表中找到elementId为:"+node.elementId+"的节点.....");
+		}
+	}
+	
+	/**
+	 * 根据elementId删除链表节点
+	 * @param elementId
+	 */
+	public void deleteElementByElementId(int elementId) {
+		Node tempNode = headNode;
+		boolean isExist = false;
+		while(true) {
+			if(null == tempNode.next) {
+				break;
+			}
+			if(elementId == tempNode.next.elementId) {
+				isExist = true;
+				break;
+			}
+			tempNode = tempNode.next;
+		}
+		if(isExist) {
+			tempNode.next = tempNode.next.next;
+		}else {
+			System.out.println("没有在链表中找到elementId为:"+elementId+"的节点.....");
+		}
+	}
+	
+	/**
+	 * 获取链表节点个数，注意，不要统计头节点
+	 * @return
+	 */
+	public int getSize() {
+		if(null == headNode.next) {
+			return 0;
+		}
+		Node tempNode = headNode;
+		int length = 0;
+		while(null != tempNode.next) {
+			length++;
+			tempNode = tempNode.next;
+		}
+		return length;
+	}
+	
+	/**
+	 * 查找单链表中的倒数第K个元素
+	 * @param index
+	 * @return
+	 */
+	public Node getReverseOrderElement(int index) {
+		if(null == headNode.next) {
+			System.out.println("当前链表为空...");
+			return null;
+		}
+		int size = this.getSize();
+		if(index<0 || index>size) {
+			System.out.println("索引越界...");
+			return null;
+		}
+		//for循环深入:for(i=起始索引位置;i<循环结束条件;i++)
+		//这里要找到倒数第K个元素，必须用for循环,不能用while循环
+		Node tempNode = headNode;
+		for(int i=0;i<size-index+1;i++) {
+			tempNode = tempNode.next;
+		}
+		return tempNode;
+	}
+	
+	/**
+	 * 反转单链表:
+	 * 		原链表:head->A->B->C->D
+	 * 		反转：
+	 * 			new head->A
+	 * 			new head->B->A
+	 * 			new head->C->B->A
+	 * 			new head->D->C->B->A
+	 * 			head->D->C->B->A
+	 */
+	public void reverse() {
+		if(null == headNode.next) {
+			System.out.println("当前链表为空...");
+			return;
+		}
+		Node currentNode = headNode.next;
+		Node reverseHeadNode = new Node(0,"");
+		//指向当前节点的下一个节点
+		Node next = null;
+		while(null != currentNode) {
+			//先暂时保存当前节点的下一个节点
+			next = currentNode.next;
+			//将currentNode的下一个节点指向链表的最前端
+            currentNode.next = reverseHeadNode.next;
+            reverseHeadNode.next = currentNode;
+            //让currentNode后移一次
+            currentNode = next;
 
+		}
+		headNode.next = reverseHeadNode.next;
+	}
+	
 	/**
 	 * 打印链表
 	 */
@@ -55,6 +183,62 @@ public class SingleLinkedList {
 			tempNode = tempNode.next;
 		}
 		System.out.println("--------------------------");
+	}
+	
+	/**
+	 * 使用栈逆序打印链表
+	 */
+	public void reversehow() {
+		if(null == headNode.next) {
+			System.out.println("链表为空......");
+			return;
+		}
+		Node tempNode = headNode.next;
+		Stack<Node> nodeStack = new Stack<Node>(); 
+		while(null != tempNode) {
+			nodeStack.push(tempNode);
+			tempNode = tempNode.next;
+		}
+		while(nodeStack.size() > 0) {
+			Node popNode = nodeStack.pop();
+			System.out.println(popNode);
+		}
+		System.out.println("--------------------------");
+	}
+	
+	/**
+	 * 递归打印链表
+	 */
+	public void showRecursion() {
+		showRecursion1(headNode);
+	}
+
+	/**
+	 * 顺序递归打印
+	 * @param headNode
+	 */
+	private void showRecursion1(Node headNode) {
+		if(null == headNode) {
+			return;
+		}
+		System.out.println(headNode);
+		if(null != headNode.next) {
+			showRecursion1(headNode.next);
+		}
+	}
+	
+	/**
+	 * 逆序递归打印
+	 * @param headNode
+	 */
+	private void showRecursion2(Node headNode) {
+		if(null == headNode) {
+			return;
+		}
+		if(null != headNode.next) {
+			showRecursion2(headNode.next);
+		}
+		System.out.println(headNode);
 	}
 }
 
@@ -85,7 +269,5 @@ class Node {
 	public String toString() {
 		return "Node [elementId=" + elementId + ", data=" + data + "]";
 	}
-	
-	
 	
 }

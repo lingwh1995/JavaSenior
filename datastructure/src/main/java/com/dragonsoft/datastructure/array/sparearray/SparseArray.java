@@ -1,4 +1,4 @@
-package com.dragonsoft.datastructure.sparearray;
+package com.dragonsoft.datastructure.array.sparearray;
 
 import java.util.ArrayList;
 import java.util.HashMap;
