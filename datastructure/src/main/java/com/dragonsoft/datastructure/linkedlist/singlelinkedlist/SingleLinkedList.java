@@ -1,6 +1,5 @@
 package com.dragonsoft.datastructure.linkedlist.singlelinkedlist;
 
-import java.util.Iterator;
 import java.util.Stack;
 
 /**
@@ -10,14 +9,14 @@ import java.util.Stack;
  */
 public class SingleLinkedList {
 	//构造一个头节点
-	private Node headNode = new Node(0,"");
+	private SingleLinkedNode headNode = new SingleLinkedNode(0,"");
 	
 	/**
 	 * 添加链表节点
 	 * @param node
 	 */
-	public void addElement(Node node) {
-		Node tempNode = headNode;
+	public void addElement(SingleLinkedNode node) {
+		SingleLinkedNode tempNode = headNode;
 		while(null != tempNode.next) {
 			tempNode = tempNode.next;
 		}
@@ -28,8 +27,8 @@ public class SingleLinkedList {
 	 * 在指定位置添加链表节点
 	 * @param node
 	 */
-	public void addElementByOrder(Node node) {
-		Node tempNode = headNode;
+	public void addElementByOrder(SingleLinkedNode node) {
+		SingleLinkedNode tempNode = headNode;
 		while(null != tempNode.next) {
 			if(tempNode.next.elementId > node.elementId) {
 				break;
@@ -48,12 +47,12 @@ public class SingleLinkedList {
 	 * 更新链表节点
 	 * @param node
 	 */
-	public void updateElement(Node node) {
+	public void updateElement(SingleLinkedNode node) {
 		if(null == headNode.next) {
 			System.out.println("当前链表为空...");
 			return;
 		}
-		Node tempNode = headNode.next;
+		SingleLinkedNode tempNode = headNode.next;
 		boolean isExist = false;
 		while(true) {
 			if(tempNode == null) {
@@ -76,8 +75,8 @@ public class SingleLinkedList {
 	 * 根据elementId删除链表节点
 	 * @param elementId
 	 */
-	public void deleteElementByElementId(int elementId) {
-		Node tempNode = headNode;
+	public void deleteByElementId(int elementId) {
+		SingleLinkedNode tempNode = headNode;
 		boolean isExist = false;
 		while(true) {
 			if(null == tempNode.next) {
@@ -104,7 +103,7 @@ public class SingleLinkedList {
 		if(null == headNode.next) {
 			return 0;
 		}
-		Node tempNode = headNode;
+		SingleLinkedNode tempNode = headNode;
 		int length = 0;
 		while(null != tempNode.next) {
 			length++;
@@ -118,7 +117,7 @@ public class SingleLinkedList {
 	 * @param index
 	 * @return
 	 */
-	public Node getReverseOrderElement(int index) {
+	public SingleLinkedNode getReverseOrderElement(int index) {
 		if(null == headNode.next) {
 			System.out.println("当前链表为空...");
 			return null;
@@ -130,7 +129,7 @@ public class SingleLinkedList {
 		}
 		//for循环深入:for(i=起始索引位置;i<循环结束条件;i++)
 		//这里要找到倒数第K个元素，必须用for循环,不能用while循环
-		Node tempNode = headNode;
+		SingleLinkedNode tempNode = headNode;
 		for(int i=0;i<size-index+1;i++) {
 			tempNode = tempNode.next;
 		}
@@ -152,10 +151,10 @@ public class SingleLinkedList {
 			System.out.println("当前链表为空...");
 			return;
 		}
-		Node currentNode = headNode.next;
-		Node reverseHeadNode = new Node(0,"");
+		SingleLinkedNode currentNode = headNode.next;
+		SingleLinkedNode reverseHeadNode = new SingleLinkedNode(0,"");
 		//指向当前节点的下一个节点
-		Node next = null;
+		SingleLinkedNode next = null;
 		while(null != currentNode) {
 			//先暂时保存当前节点的下一个节点
 			next = currentNode.next;
@@ -177,7 +176,7 @@ public class SingleLinkedList {
 			System.out.println("链表为空......");
 			return;
 		}
-		Node tempNode = headNode.next;
+		SingleLinkedNode tempNode = headNode.next;
 		while(null != tempNode) {
 			System.out.println(tempNode);
 			tempNode = tempNode.next;
@@ -193,14 +192,14 @@ public class SingleLinkedList {
 			System.out.println("链表为空......");
 			return;
 		}
-		Node tempNode = headNode.next;
-		Stack<Node> nodeStack = new Stack<Node>(); 
+		SingleLinkedNode tempNode = headNode.next;
+		Stack<SingleLinkedNode> nodeStack = new Stack<SingleLinkedNode>(); 
 		while(null != tempNode) {
 			nodeStack.push(tempNode);
 			tempNode = tempNode.next;
 		}
 		while(nodeStack.size() > 0) {
-			Node popNode = nodeStack.pop();
+			SingleLinkedNode popNode = nodeStack.pop();
 			System.out.println(popNode);
 		}
 		System.out.println("--------------------------");
@@ -217,7 +216,7 @@ public class SingleLinkedList {
 	 * 顺序递归打印
 	 * @param headNode
 	 */
-	private void showRecursion1(Node headNode) {
+	private void showRecursion1(SingleLinkedNode headNode) {
 		if(null == headNode) {
 			return;
 		}
@@ -231,7 +230,7 @@ public class SingleLinkedList {
 	 * 逆序递归打印
 	 * @param headNode
 	 */
-	private void showRecursion2(Node headNode) {
+	private void showRecursion2(SingleLinkedNode headNode) {
 		if(null == headNode) {
 			return;
 		}
@@ -247,27 +246,27 @@ public class SingleLinkedList {
  * @author lingwh
  *
  */
-class Node {
+class SingleLinkedNode {
 	//数据信息part1：元素编号
 	protected int elementId;
 	//数据信息part2：数据值
 	protected String data;
 	//指针信息
-	protected Node next;
+	protected SingleLinkedNode next;
 	
 	/**
 	 * 节点构造信息
 	 * @param elementId
 	 * @param data
 	 */
-	public Node(int elementId, String data) {
+	public SingleLinkedNode(int elementId, String data) {
 		this.elementId = elementId;
 		this.data = data;
 	}
 
 	@Override
 	public String toString() {
-		return "Node [elementId=" + elementId + ", data=" + data + "]";
+		return "SingleLinkedNode [elementId=" + elementId + ", data=" + data + "]";
 	}
 	
 }
