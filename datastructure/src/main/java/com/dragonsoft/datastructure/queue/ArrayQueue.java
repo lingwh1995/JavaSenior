@@ -73,9 +73,10 @@ public class ArrayQueue {
 		if (isEmpty()) {
 			System.out.println("队列为空......");
 			throw new RuntimeException("空队列异常");
-		} else
+		} else {
 			// 移动头指针
 			front++;
+		}	
 		return elements[front];
 	}
 
