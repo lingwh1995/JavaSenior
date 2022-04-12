@@ -57,7 +57,7 @@ public class SingleLinkedListTest {
 		//测试反转链表
 		System.out.println("---------反转前------");
 		singleLinkedList.show();
-		singleLinkedList.reverse();
+		//singleLinkedList.reverse();
 		System.out.println("---------反转后------");
 		singleLinkedList.show();
 		System.out.println("---------递归打印链表------");

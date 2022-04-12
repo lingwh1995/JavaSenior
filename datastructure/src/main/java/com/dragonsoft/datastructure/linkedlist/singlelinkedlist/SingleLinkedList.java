@@ -217,13 +217,11 @@ public class SingleLinkedList {
 	 * @param headNode
 	 */
 	private void showRecursion1(SingleLinkedNode headNode) {
-		if(null == headNode) {
+		if(null == headNode.next) {
 			return;
 		}
-		System.out.println(headNode);
-		if(null != headNode.next) {
-			showRecursion1(headNode.next);
-		}
+		System.out.println(headNode.next);
+		showRecursion1(headNode.next);
 	}
 	
 	/**
@@ -231,13 +229,11 @@ public class SingleLinkedList {
 	 * @param headNode
 	 */
 	private void showRecursion2(SingleLinkedNode headNode) {
-		if(null == headNode) {
+		if(null == headNode.next) {
 			return;
 		}
-		if(null != headNode.next) {
-			showRecursion2(headNode.next);
-		}
-		System.out.println(headNode);
+		showRecursion2(headNode.next);
+		System.out.println(headNode.next);
 	}
 }
 
