@@ -5,7 +5,7 @@ public class ArrayStackGeneric<T> {
 	private int maxCapacity;
 	private T[] elements;
 	//栈指针，默认为第一个元素的前一个元素
-	private static int top = -1;
+	private int top = -1;
 	
 	@SuppressWarnings("unchecked")
 	public ArrayStackGeneric(int maxCapacity) {
