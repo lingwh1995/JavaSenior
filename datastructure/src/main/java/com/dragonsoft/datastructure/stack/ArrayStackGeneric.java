@@ -77,6 +77,7 @@ public class ArrayStackGeneric<T> {
 	 * 打印栈
 	 */
 	public void show() {
+		System.out.println("------");
 		for(int i=top; i>=0; i--) {
 			System.out.print(elements[i] + "\n");
 		}
