@@ -1,6 +1,5 @@
 package com.dragonsoft.datastructure.stack;
 
-import java.util.Arrays;
 
 /**
  * 逆波兰计算器
@@ -38,15 +37,15 @@ public class ReversePolishCalculator {
 		}
 		return isOperator;
 	}
-	
+
 	/**
 	 * 中缀表达式转为逆波兰表达式:不能处理带有括号和数字大于等于两位数的情况
 	 * @param expression
 	 * @return
 	 */
 	public String middleExpressionToReversePolish1to9(String expression) {
-		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(10);
-		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(10);
+		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(20);
+		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(20);
 		int index = 0;
 		while(true) {
 			String s = expression.substring(index,index+1);
@@ -97,8 +96,8 @@ public class ReversePolishCalculator {
 	 * @return
 	 */
 	public String middleExpressionToReversePolishAny(String expression) {
-		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(10);
-		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(10);
+		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(20);
+		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(20);
 		int index = 0;
 		StringBuilder completeNum = new StringBuilder();
 		while(true) {
@@ -164,8 +163,8 @@ public class ReversePolishCalculator {
 	 * @return
 	 */
 	public String middleExpressionToReversePolishAnyWithBrackets(String expression) {
-		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(10);
-		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(10);
+		ArrayStackGeneric<String> numStack = new ArrayStackGeneric<String>(20);
+		ArrayStackGeneric<String> operatorStack = new ArrayStackGeneric<String>(20);
 		int index = 0;
 		StringBuilder completeNum = new StringBuilder();
 		while(true) {

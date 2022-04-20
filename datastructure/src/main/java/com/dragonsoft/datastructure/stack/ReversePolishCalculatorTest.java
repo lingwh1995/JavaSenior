@@ -52,7 +52,7 @@ public class ReversePolishCalculatorTest {
 	@Test
 	public void fun3() {
 		ReversePolishCalculator reversePolishCalculator = new ReversePolishCalculator();
-		String expression = "2*(8+16)/4";
+		String expression = "(((2*(8+16)/4)+1)+1)+1";
 		//获取逆波兰表达式
 		String reversePolishExpression = reversePolishCalculator.middleExpressionToReversePolishAnyWithBrackets(expression);
 		System.out.println("转换后得到的逆波兰表达式:" + reversePolishExpression);

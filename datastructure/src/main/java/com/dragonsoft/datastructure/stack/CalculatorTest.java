@@ -12,8 +12,7 @@ public class CalculatorTest {
 	public void fun1() {
 		Calculator calculator = new Calculator();
 		String expression = "1+2+5/5";
-		calculator.calcExpression1to9(expression);
-		
+		calculator.calcExpression1to9(expression);	
 	}
 	
 	/**
@@ -22,7 +21,8 @@ public class CalculatorTest {
 	@Test
 	public void fun2() {
 		Calculator calculator = new Calculator();
-		String expression = "50+5*5+500/20+900-500";
+//		String expression = "50+5*5+500/20+900-500";
+		String expression = "12+2+5/5";
 		calculator.calcExpressionAny(expression);
 	}
 	
@@ -48,7 +48,6 @@ public class CalculatorTest {
 	public void fun5() {
 		String expression = "123.6+78+9";
 		formatPrint2(expression);
-			
 	}
 	
 	

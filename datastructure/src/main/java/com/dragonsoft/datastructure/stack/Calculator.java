@@ -62,7 +62,7 @@ public class Calculator {
 	}
 	
 	/**
-	 * 计算表达式:只能计算一位数字以内加减乘除
+	 * 计算表达式:只能计算一位数字以内加减乘除 
 	 * @param expression
 	 */
 	public void calcExpression1to9(String expression) {
