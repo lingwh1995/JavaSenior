@@ -8,6 +8,11 @@ import org.dom4j.Element;
 import org.dom4j.tree.DefaultElement;
 import org.junit.Test;
 
+/**
+ * 组合模式实现类似与Mybatis动态Sql组装的功能
+ * @author lingwh
+ *
+ */
 public class Client {
 	
 	@Test
