@@ -2,6 +2,11 @@ package com.dragonsoft.designpattern.structure.adapter.clas;
 
 import org.junit.Test;
 
+/**
+ * 类适配器
+ * @author lingwh
+ *
+ */
 public class Client {
 	
 	@Test

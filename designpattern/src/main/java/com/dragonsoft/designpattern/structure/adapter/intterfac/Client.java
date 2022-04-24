@@ -3,7 +3,11 @@ package com.dragonsoft.designpattern.structure.adapter.intterfac;
 
 import org.junit.Test;
 
-
+/**
+ * 接口适配器
+ * @author lingwh
+ *
+ */
 public class Client {
 	
 	@Test

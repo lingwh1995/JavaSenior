@@ -12,7 +12,7 @@ public class Client {
 	@Test
 	public void fun() throws ClassNotFoundException {
 		//注册驱动
-		Class.forName("com.dragonsoft.designpattern.structure.bridge.jdbc.MysqlDriver");
+		Class<?> clasz = Class.forName("com.dragonsoft.designpattern.structure.bridge.jdbc.MysqlDriver");
 		//获取Connection对象
 		Connection connection = DriverManager.getConnection();
 	}

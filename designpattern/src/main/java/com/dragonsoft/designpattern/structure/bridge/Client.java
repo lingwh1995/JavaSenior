@@ -12,7 +12,8 @@ public class Client {
 	public void fun() {
 		//咖啡添加物
 		ICoffeeAdditive coffeeAdditive = new Milk();
-		Coffee coffee = new BigCupCoffee(coffeeAdditive);
+		Coffee coffee = new StarbuckCoffee();
+		coffee.setCoffeeAdditive(coffeeAdditive);
 		coffee.orderCoffee();
 	}
 
