@@ -4,17 +4,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ChessBoard {
-	
+	//棋盘
 	private String[][] chessBoard;
+	//白棋编号
+	int whiteChessNo;
+	//黑棋编号
+	int blackChessNo;
 	
 	public ChessBoard() {
-		//初始化棋盘※
+		//初始化棋盘和棋子编号
 		chessBoard = new String[10][10];
 		for(int i=0; i<chessBoard.length; i++) {
 			for(int j=0; j<chessBoard[i].length; j++) {
 				chessBoard[i][j] = "※";
 			}
 		}
+		whiteChessNo = 1;
+		blackChessNo = 1;
 	}
 	
 	/**
@@ -28,13 +34,13 @@ public class ChessBoard {
 			//从享元池中获取细粒度的享元对象
 			WhitePieces chessPieces = (WhitePieces) ChessFactory.getInstance().getChessPieces("white");
 			System.out.println("BlackPieces:" + chessPieces);
-			chessPieces.setChessLocation(chessBoard,x,y);
+			chessPieces.setChessLocation(chessBoard,x,y,whiteChessNo++);
 		}
 		if(chessType == 2) {
 			//从享元池中获取细粒度的享元对象
 			BlackPieces chessPieces = (BlackPieces) ChessFactory.getInstance().getChessPieces("black");
 			System.out.println("BlackPieces:" + chessPieces);
-			chessPieces.setChessLocation(chessBoard,x,y);
+			chessPieces.setChessLocation(chessBoard,x,y,blackChessNo++);
 		}
 		showChessBoard();
 	}
@@ -74,5 +80,6 @@ public class ChessBoard {
 				break;
 			}
 		}
+		scanner.close();
 	}
 }
