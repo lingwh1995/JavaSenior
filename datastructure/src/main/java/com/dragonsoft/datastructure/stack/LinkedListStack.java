@@ -4,14 +4,14 @@ import java.util.NoSuchElementException;
 
 public class LinkedListStack {
 	
-	private LinkedList LinkedList = new LinkedList();
+	private LinkedList linkedList = new LinkedList();
 	
 	/**
 	 * 压栈
 	 * @param element
 	 */
 	public void push(int element) {
-		LinkedList.add(element);
+		linkedList.add(element);
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class LinkedListStack {
 	 * @return
 	 */
 	public int pop() {
-		return LinkedList.removeLast();
+		return linkedList.removeLast();
 	}
 	
 	/**
@@ -27,7 +27,7 @@ public class LinkedListStack {
 	 * @return
 	 */
 	public int peek() {
-		return LinkedList.returnLast();
+		return linkedList.returnLast();
 	}
 	
 	/**
@@ -35,14 +35,14 @@ public class LinkedListStack {
 	 * @return
 	 */
 	public int size() {
-		return LinkedList.size();
+		return linkedList.size();
 	}
 	
 	/**
 	 * 打印栈
 	 */
 	public void show() {
-		LinkedList.reverse();
+		linkedList.reverse();
 	}
 	
 }
