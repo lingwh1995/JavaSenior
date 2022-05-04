@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.structure.facade;
+package com.dragonsoft.designpattern.structure.facade.facade1;
 
 /**
  * 爆米花机，使用饿汉式

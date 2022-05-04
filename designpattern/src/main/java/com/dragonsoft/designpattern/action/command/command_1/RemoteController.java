@@ -1,5 +1,10 @@
 package com.dragonsoft.designpattern.action.command.command_1;
 
+/**
+ * Invoker
+ * @author lingwh
+ *
+ */
 public class RemoteController {
 	//存放 开 命令的命令组
 	ICommand[] onCommands;

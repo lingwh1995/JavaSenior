@@ -28,7 +28,7 @@ public class IntegerTest {
 			System.out.println(cache[i]);
 		}
 	}
-	
+
 	/**
 	 * 测试为什么a的值变化不会影响到b的值
 	 */
@@ -41,7 +41,7 @@ public class IntegerTest {
 		//存放在栈中的数据b
 		Integer b = Integer.valueOf(100);
 		//输出存放在栈中的数据a和存放在栈中的数据b
-		System.out.println("a=" + a + ",b=" + b);	
+		System.out.println("a=" + a + ",b=" + b);	//101 100
 		
 		int[] nums = new int[] {1};
 		//存放在栈中的数据x
@@ -50,14 +50,13 @@ public class IntegerTest {
 		x++;
 		//操作存放在栈中的数据y
 		int y = nums[0];
-		System.out.println("x=" + x + ",y=" + y);
+		System.out.println("x=" + x + ",y=" + y); // 2 1
 		//操作存放在堆中的数据nums[0]
 		nums[0]++;
-		//将堆中的值赋值一份给栈中的z
+		//将堆中的值的引用赋值一份给栈中的z
 		int z = nums[0];
 		//输出存放在栈中的数据z
-		System.out.println("z=" + z);
-			
+		System.out.println("z=" + z); //2
 	}
 	
 	/**

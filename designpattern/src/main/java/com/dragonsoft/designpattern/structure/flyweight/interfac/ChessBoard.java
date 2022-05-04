@@ -33,7 +33,7 @@ public class ChessBoard {
 		if(chessType == 1) {
 			//从享元池中获取细粒度的享元对象
 			WhitePieces chessPieces = (WhitePieces) ChessFactory.getInstance().getChessPieces("white");
-			System.out.println("BlackPieces:" + chessPieces);
+			System.out.println("WhitePieces:" + chessPieces);
 			chessPieces.setChessLocation(chessBoard,x,y,whiteChessNo++);
 		}
 		if(chessType == 2) {

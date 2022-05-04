@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.structure.facade;
+package com.dragonsoft.designpattern.structure.facade.facade1;
 
 /**
  * 家庭影院
@@ -23,7 +23,7 @@ public class HomeTheaterFacade {
     /**
      * 准备
      */
-    public void read(){
+    public void ready(){
         //准备好爆米花
         propcorn.on();
         propcorn.pop();

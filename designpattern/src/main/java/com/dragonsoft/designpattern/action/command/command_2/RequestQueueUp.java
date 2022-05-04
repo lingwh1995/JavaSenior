@@ -3,6 +3,11 @@ package com.dragonsoft.designpattern.action.command.command_2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 请求排队
+ * @author lingwh
+ *
+ */
 public class RequestQueueUp {
 	 private List<ICommand> commands = new ArrayList<>();
 	 

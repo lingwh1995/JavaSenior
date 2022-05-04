@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.structure.facade;
+package com.dragonsoft.designpattern.structure.facade.facade1;
 
 
 /**

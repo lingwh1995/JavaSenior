@@ -27,7 +27,7 @@ public class Client {
 		//归还单车
 		bike1.back();
 		BikeFlyWeight bike4 = factory.getBike();
-		bike4.ride("王五");
+		bike4.ride("赵六");
 		
 		//查看享元池中的对象个数
 		int bikeCount = factory.getBikeCount();

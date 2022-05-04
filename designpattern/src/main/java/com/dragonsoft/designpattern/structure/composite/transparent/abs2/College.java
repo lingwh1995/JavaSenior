@@ -30,7 +30,7 @@ public class College extends OrganizationComponment {
                 //把被删除对象的子组件对象添加到当前实例中
 				departments.add(organizationComponment);
 			}
-			departments.remove(department);
+			
 		}
 	}
 	

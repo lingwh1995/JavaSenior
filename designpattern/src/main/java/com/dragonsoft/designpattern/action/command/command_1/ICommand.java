@@ -1,5 +1,10 @@
 package com.dragonsoft.designpattern.action.command.command_1;
 
+/**
+ * 命令接口
+ * @author lingwh
+ *
+ */
 public interface ICommand {
 	
 	//执行操作

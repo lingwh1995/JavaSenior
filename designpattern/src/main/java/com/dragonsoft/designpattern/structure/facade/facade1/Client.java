@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.structure.facade;
+package com.dragonsoft.designpattern.structure.facade.facade1;
 
 /**
  * 客户端
@@ -8,7 +8,7 @@ public class Client {
         //不直接调用各个对象，通过外观类调用子对象
         HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade();
         System.out.println("--------------------------------");
-        homeTheaterFacade.read();
+        homeTheaterFacade.ready();
         System.out.println("--------------------------------");
         homeTheaterFacade.play();
         System.out.println("--------------------------------");

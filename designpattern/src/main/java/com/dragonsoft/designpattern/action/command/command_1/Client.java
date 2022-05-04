@@ -25,7 +25,6 @@ public class Client {
 		remoteController.offCommandButtonWasPushed(0);
 		//撤销关灯操作
 		remoteController.undoCommandWasPushed();
-		
 	}
 	
 }

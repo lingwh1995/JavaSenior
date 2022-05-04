@@ -1,5 +1,10 @@
 package com.dragonsoft.designpattern.action.command.command_2;
 
+/**
+ * 宏命令
+ * @author lingwh
+ *
+ */
 public class MacroCommand implements ICommand{
 	ICommand[] commands;
 

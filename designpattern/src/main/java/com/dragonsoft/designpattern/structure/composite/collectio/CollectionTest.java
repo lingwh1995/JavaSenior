@@ -98,7 +98,7 @@ public class CollectionTest {
 		System.out.println("------------------------");
 		
 		/**
-		 * 模拟HashMap.putAAll(Map m),即给容器中添加容器组件
+		 * 模拟HashMap.putAll(Map m),即给容器中添加容器组件
 		 */
 		universityUFE.add(universityXDU);
 		universityUFE.show();

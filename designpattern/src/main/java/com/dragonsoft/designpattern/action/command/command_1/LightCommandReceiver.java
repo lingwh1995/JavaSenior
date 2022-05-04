@@ -1,5 +1,10 @@
 package com.dragonsoft.designpattern.action.command.command_1;
 
+/**
+ * Receiver
+ * @author lingwh
+ *
+ */
 public class LightCommandReceiver {
 	
 	public void on() {
