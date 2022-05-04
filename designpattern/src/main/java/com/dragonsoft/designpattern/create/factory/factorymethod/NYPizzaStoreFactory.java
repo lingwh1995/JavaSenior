@@ -1,6 +1,6 @@
 package com.dragonsoft.designpattern.create.factory.factorymethod;
 
-public class NYPizzaStore extends PizzaStore {
+public class NYPizzaStoreFactory extends PizzaStoreFactory {
 
 	Pizza createPizza(String item) {
 		if (item.equals("cheese")) {

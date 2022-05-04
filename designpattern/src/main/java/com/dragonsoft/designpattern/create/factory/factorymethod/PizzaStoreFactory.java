@@ -1,6 +1,6 @@
 package com.dragonsoft.designpattern.create.factory.factorymethod;
 
-public abstract class PizzaStore {
+public abstract class PizzaStoreFactory {
 	
 	/**
 	 * 工厂方法

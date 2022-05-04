@@ -2,8 +2,8 @@ package com.dragonsoft.designpattern.create.factory.factorymethod;
 
 public class Clinet {
 	public static void main(String[] args) {
-		PizzaStore nyStore = new NYPizzaStore();
-		PizzaStore chicagoStore = new ChicagoPizzaStore();
+		PizzaStoreFactory nyStore = new NYPizzaStoreFactory();
+		PizzaStoreFactory chicagoStore = new ChicagoPizzaStoreFactory();
  
 		Pizza pizza = nyStore.orderPizza("cheese");
 		System.out.println("Ethan ordered a " + pizza.getName() + "\n");
