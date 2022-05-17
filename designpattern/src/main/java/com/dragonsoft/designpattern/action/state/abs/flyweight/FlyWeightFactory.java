@@ -18,10 +18,10 @@ public class FlyWeightFactory {
 		contextPool.push(new OfficeAutomationContext());
 		
 		//把所有的审批状态类也加入到享元池中
-		approveStatePool.put("clerk", new ClerkApproveState(getContext()));
-		approveStatePool.put("manager", new ManagerApproveState(getContext()));
-		approveStatePool.put("boss", new BossApproveState(getContext()));
-		approveStatePool.put("government", new GovernmentApproveState(getContext()));
+		approveStatePool.put("clerk", new ClerkApproveState());
+		approveStatePool.put("manager", new ManagerApproveState());
+		approveStatePool.put("boss", new BossApproveState());
+		approveStatePool.put("government", new GovernmentApproveState());
 		approveStatePool.put("end", new EndApproveState(getContext()));
 		
 	}

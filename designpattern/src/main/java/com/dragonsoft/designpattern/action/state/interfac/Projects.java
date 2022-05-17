@@ -13,9 +13,12 @@ public class Projects {
 	private static Map<String,StringBuilder> projects = new HashMap<>();
 	
 	static {
-		StringBuilder project = new StringBuilder();
-		project.append("方案内容:xxxx");
-		projects.put("001", project);
+		StringBuilder project1 = new StringBuilder();
+		project1.append("方案1内容:xxxx");
+		projects.put("001", project1);
+		StringBuilder project2 = new StringBuilder();
+		project2.append("方案2内容:xxxx");
+		projects.put("002", project2);
 	}
 	
 	/**
@@ -44,4 +47,59 @@ public class Projects {
 	public static StringBuilder removeProject(String projectId) {
 		return projects.remove(projectId);
 	}
+	
+
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -7,10 +7,6 @@ package com.dragonsoft.designpattern.action.state.abs.flyweight;
  */
 public class ClerkApproveState extends ApproveState{
 
-	public ClerkApproveState(OfficeAutomationContext context) {
-		this.context = context;
-	}
-	
 	@Override
 	public void approve(String projectId) {
 		//根据projectId查询Project内容
@@ -22,6 +18,7 @@ public class ClerkApproveState extends ApproveState{
 		System.out.println("当前审批操作:职员已经执行完审批操作...[下一步审批人员:经理]");
 		//进入下一环节:经理审批环节
 		FlyWeightFactory factory = FlyWeightFactory.getInstance();
+		OfficeAutomationContext context = factory.getContext();
 		context.setApproveState(factory.getApproveState("manager"));
 	}
 

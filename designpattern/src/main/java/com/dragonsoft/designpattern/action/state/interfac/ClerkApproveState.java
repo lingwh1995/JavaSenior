@@ -6,11 +6,11 @@ package com.dragonsoft.designpattern.action.state.interfac;
  *
  */
 public class ClerkApproveState implements ApproveState{
-
+	
 	@Override
 	public void approve(OfficeAutomationContext context,String projectId) {
 		//根据projectId查询Project内容
-		StringBuilder project = Projects.getProject(projectId);
+	    StringBuilder project = Projects.getProject(projectId);
 		//员工给Project添加审批意见
 		project.append("\n员工同意该方案");
 		//保存添加了审批意见的Project

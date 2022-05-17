@@ -16,7 +16,7 @@ public class OfficeAutomationContext {
 
 	public OfficeAutomationContext() {
 		//初始化初始审批状态
-		approveState = new ClerkApproveState(this);;
+		approveState = new ClerkApproveState();;
 	}
 	
 	/**
